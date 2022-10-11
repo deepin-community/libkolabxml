@@ -1,0 +1,423 @@
+libkolabxml (1.2.0-3) unstable; urgency=medium
+
+  [ Sandro Knauß ]
+  * Update standards version to 4.6.0, no changes needed.
+  * Add Multi-Arch hints.
+  * Merge DEB_BUILD_OPTIONS with DEB_BUILD_MAINT_OPTIONS
+  * Make blhc pass, by adding a ignore line.
+
+  [ Matthias Klose ]
+  * Mark two more symbols as optional. (Closes: #996952)
+
+  [ Sandro Knauß ]
+  * No need to forward Debian internal patches.
+  * Update symbols
+
+ -- Sandro Knauß <hefee@debian.org>  Mon, 01 Nov 2021 15:52:39 +0100
+
+libkolabxml (1.2.0-2) unstable; urgency=medium
+
+  * Update symbols for boost 1.74 (Closes: #977252).
+  * Mark some symbols as optional, as they disappear with different build
+    options (Closes: #976289).
+
+ -- Sandro Knauß <hefee@debian.org>  Wed, 16 Dec 2020 01:32:12 +0100
+
+libkolabxml (1.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update watch file to match new release place.
+  * Delete signing key, as no signatures are available.
+  * Bump Standards-Version to 4.5.1 (no changes needed).
+  * fail-missing is default with compat=13.
+  * Update install files.
+  * Update symbols files. (Closes: #975444)
+
+ -- Sandro Knauß <hefee@debian.org>  Tue, 01 Dec 2020 22:39:12 +0100
+
+libkolabxml (1.1.6-8) unstable; urgency=high
+
+  [ Sandro Knauß ]
+  * Update symbols from buildds for 1.1.6 from alpha, hurd, mk68k, powerpc,
+    sh4 and sparc64.
+
+ -- Sandro Knauß <hefee@debian.org>  Thu, 15 Oct 2020 04:09:19 +0200
+
+libkolabxml (1.1.6-7) unstable; urgency=high
+
+  [ Sandro Knauß ]
+  * Update symbols from buildds for GCC-10 (Closes: #957449).
+  * Bump Standards-Version to 4.5.0 (No changes needed).
+  * Bump compat level to 13.
+  * Set upstream metadata fields: Repository.
+  * fix debian-rules-uses-as-needed-linker-flag.
+  * set buildinfo=+path.
+
+ -- Sandro Knauß <hefee@debian.org>  Wed, 14 Oct 2020 12:16:50 +0200
+
+libkolabxml (1.1.6-6.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * libkolabxml1v5.symbols: Removed symbols that disappeared when
+    rebuilding with Boost 1.71. (Closes: #960418)
+
+ -- Adrian Bunk <bunk@debian.org>  Thu, 11 Jun 2020 00:08:22 +0300
+
+libkolabxml (1.1.6-6) unstable; urgency=medium
+
+  * Update symbols from buildds for 1.1.6 (Closes: #945420)
+
+ -- Sandro Knauß <hefee@debian.org>  Wed, 27 Nov 2019 21:56:30 +0100
+
+libkolabxml (1.1.6-5) unstable; urgency=medium
+
+  * Remove python2 support (Closes: #936885).
+  * Update symbolsfiles in order to build with gcc-9 (Closes: #925748).
+  * Add Build-Depends-Package to symbolsfile.
+  * Update compat to 12 (No changes needed) (Closes: #943628).
+  * Update Standards-Version to 4.4.1 (No changes needed).
+
+ -- Sandro Knauß <hefee@debian.org>  Fri, 15 Nov 2019 20:30:31 +0100
+
+libkolabxml (1.1.6-4) unstable; urgency=medium
+
+  * Update Vcs-* to salsa.
+  * d/watch: Update upstream url.
+  * Update invalid maintainer address to (Closes: #899581)
+  * Replace Qt4 with Qt5 (Closes: #875019)
+
+ -- Sandro Knauß <hefee@debian.org>  Tue, 05 Mar 2019 02:21:17 +0100
+
+libkolabxml (1.1.6-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Mark a bunch of symbols leaked from boost as optional.  Closes: #914147
+  * Set Rules-Requires-Root:no.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sun, 20 Jan 2019 13:33:39 +0100
+
+libkolabxml (1.1.6-3) unstable; urgency=medium
+
+  [ Sandro Knauß ]
+  * Update symbolsfile with buildlogs from builds (1.1.6).
+  * Fix "Transition to xerces-c 3.2" (Closes: #881115)
+    - build and update symbolsfile with xerces-c 3.2
+
+ -- Sandro Knauß <hefee@debian.org>  Sun, 03 Dec 2017 11:23:50 +0100
+
+libkolabxml (1.1.6-2) unstable; urgency=medium
+
+  * Update symbolsfile with buildlogs from buildds from (1.1.6).
+    - Fix "libkolabxml FTBFS on ppc64el: symbol differences" (Closes: #878786)
+  * Use pybuild for building for all python versions.
+  * Use python3-all-dev as Build-Dependency to build for all python versions.
+  * Use dh_missing instead of dh_install.
+
+ -- Sandro Knauß <hefee@debian.org>  Tue, 17 Oct 2017 01:21:01 +0200
+
+libkolabxml (1.1.6-1) unstable; urgency=medium
+
+  * New upstream version (1.1.6).
+  * Add second upstream signing-key 0x28DE9FDA9342BF08.
+  * Update my mailadresse to debian ones.
+  * Update symbolsfile with buildlogs from buildds from (1.1.4).
+  * Bump to debhelper 10 (removed default --parallel from rules file).
+  * Update Standards-Version to 4.1.1. No changes needed.
+  * Add dep3 header at use-phpconfig-to-detect-phpincludedir.patch
+  * Update sysmbols file against 1.1.6.
+  * Use https for link to dep5.
+  * Update homepage url.
+
+ -- Sandro Knauß <hefee@debian.org>  Sun, 15 Oct 2017 21:21:32 +0200
+
+libkolabxml (1.1.4-1) unstable; urgency=medium
+
+  * New upstream release (1.1.4). (Closes: 811631)
+  * Update the symbols files to make them compatible with gcc-6.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 20 Jul 2016 17:04:15 +0200
+
+libkolabxml (1.1.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Updated symbolfile (only optional symbols updates)
+
+ -- Sandro Knauß <hefee@debian.org>  Mon, 14 Dec 2015 19:22:51 +0100
+
+libkolabxml (1.1.1-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove PHP bindings as swig doesn't support PHP 7.0 yet.
+    (Closes: #821687)
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 15 Jun 2016 10:05:45 +0200
+
+libkolabxml (1.1.1-3) unstable; urgency=medium
+
+  * Update symbols file for other architectures.
+
+ -- Diane Trout <diane@debian.org>  Wed, 19 Aug 2015 15:55:43 -0700
+
+libkolabxml (1.1.1-2) unstable; urgency=medium
+
+  * Add breaks/replaces on pre-gcc5 library name.
+  * Remove override_dh_makeshlibs, it was a relic
+    from before libkolabxml was using pkgkde_symbolshelper.
+
+ -- Diane Trout <diane@debian.org>  Tue, 18 Aug 2015 15:19:13 -0700
+
+libkolabxml (1.1.1-1) unstable; urgency=medium
+
+  * Update Diane Trout's email address
+  * Rename libkolabxml1 to libkolabxml1v5 and create a new symbols
+    file as many symbols changed because of the transition to gcc-5
+  * New upstream release
+
+ -- Diane Trout <diane@debian.org>  Tue, 18 Aug 2015 12:09:57 -0700
+
+libkolabxml (1.1.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols files to build on all plattforms.
+
+ -- Sandro Knauß <hefee@debian.org>  Sun, 31 May 2015 22:49:24 +0200
+
+libkolabxml (1.1.0-2) unstable; urgency=medium
+
+  * Get libkolabxml into unstable. It was uploaded to expermental because of
+    the freeze.
+
+ -- Sandro Knauß <hefee@debian.org>  Wed, 27 May 2015 17:59:20 +0200
+
+libkolabxml (1.1.0-1) experimental; urgency=medium
+
+  [ Sandro Knauß ]
+  * Team upload.
+  * New upstream release.
+  * Added myself to uploaders with Diane's permission.
+  * Added dh-python as BuildDep.
+    - A warning in build process suggested this
+  * Updated libkolabxml1.symbols (two missing symbols, no SONAME bumping).
+    - one missing symbol:
+    KolabObjects::getConfiguratinoType(Configuration::ConfigurationType)
+    only a typo, till now only libkolab is dependend on libkolabxml and
+    libkolab does not use this symbol. So the missing symbol can be seen
+    as an internal one at the moment.
+    - the other one uses auto_ptr, all auto_ptr symbols are internal ones.
+  * Updated and reorderd copyright file.
+  * Updated libkolabxml1.lintian-overrides to new soname.
+  * Switched downloadurl to http://mirror.kolabsys.com/pub/releases/
+    (there are also signed packages available, but unfortunately not
+    detached)
+
+  [ Diane Trout ]
+  * Update symbols file with other architecture build logs.
+    This should fix (Closes: #761934)
+  * Update Standards-Version to 3.9.6. No changes needed.
+
+ -- Sandro Knauß <hefee@debian.org>  Mon, 09 Mar 2015 17:42:42 +0100
+
+libkolabxml (1.0.2-2) unstable; urgency=medium
+
+  * Fix symbols file. Part of it was accidentally deleted.
+
+ -- Diane Trout <diane@ghic.org>  Sun, 28 Sep 2014 21:40:40 -0700
+
+libkolabxml (1.0.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Remove patch applied upstream: xsdcxx-4.0-support.patch
+  * Update symbols file.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 04 Sep 2014 13:27:54 +0200
+
+libkolabxml (1.0.1-4) unstable; urgency=medium
+
+  * Team upload.
+
+  * Update symbols files. (Closes: #755562).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 25 Aug 2014 20:07:26 +0200
+
+libkolabxml (1.0.1-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Diane Trout ]
+  * Add xsdcxx-4.0-support.patch (Closes: #756866)
+  * Update libkolabxml1.symbols
+    - many symbols changed due to change in simple_type template
+    - needed to tag many symbols that used auto_ptr template
+      as (optional=templinst)
+    - The components2 namespace was not generated by xsdcxx.
+    - A few symbols associated with valarm moved from components1
+      to components namespace.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 18 Aug 2014 15:27:40 +0200
+
+libkolabxml (1.0.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols files. (Closes: #755562)
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 22 Jul 2014 11:51:49 +0200
+
+libkolabxml (1.0.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Paul Klos ]
+  * Imported Upstream version 1.0.1 (Closes: #730600)
+
+  [ Diane Trout ]
+  * Add libkolabxml1.symbols.
+  * Remove no-symbols-control-file from lintian overrides.
+  * Add libcurl4-gnutls-dev to libkolabxml-dev dependencies.
+    Without that building kdepim-runtime didn't know it needed curl.
+  * Add myself to uploaders.
+  * Update Standards-Version to 3.9.5. No changes needed.
+  * Update Vcs-Git to canonical URL.
+  * Force specific python versions for SWIG, avoids linking against
+    python 3 if its available.
+
+ -- Diane Trout <diane@ghic.org>  Sat, 28 Jun 2014 20:31:35 -0700
+
+libkolabxml (0.8.4-5) unstable; urgency=low
+
+  * Fix parallel build issue
+  * Remove unused override
+  * Upgrade to standards version 3.9.4
+  * Fix dependency issues on libkolabxml-dev (Closes: #714102)
+    - Disable transitive linking
+    - Depend libkolabxml-dev on libboost-dev
+  * Close race condition bug, see previous entry (Closes: #710568)
+  * Fix changelog syntax re. closing bugs
+  * Disable verbosity
+
+ -- Paul Klos <kolab@klos2day.nl>  Tue, 20 Aug 2013 18:37:13 +0200
+
+libkolabxml (0.8.4-4) unstable; urgency=low
+
+  * Fix race condition
+    php_kolabformat.h was accessed before generation was complete
+  * Update changelog
+
+ -- Paul Klos <kolab@klos2day.nl>  Sat, 15 Jun 2013 14:10:23 +0200
+
+libkolabxml (0.8.4-3) unstable; urgency=low
+
+  * Upload to Debian
+  * Fix file not found error during dh_install
+
+ -- Paul Klos <kolab@klos2day.nl>  Fri, 17 May 2013 23:03:10 +0200
+
+libkolabxml (0.8.4-2) unstable; urgency=low
+
+  * Update changelog
+  * Make all descriptions end with a period.
+  * Updated copyright
+    Added FLOSS exception from http://www.codesynthesis.com/projects/xsd/FLOSSE
+  * Use dh_makeshlibs override instead of shlibs file
+  * Add GPL-3 paragraph
+  * Fix shlibs
+  * Move kolabformat.ini into debian/
+
+ -- Paul Klos <kolab@klos2day.nl>  Mon, 13 May 2013 22:25:37 +0200
+
+libkolabxml (0.8.4-1) unstable; urgency=low
+
+  * Remove empty line
+  * Imported Upstream version 0.8.4
+  * Update changelog
+  * Correct search for PHP version and include dirs
+  * Remove unused cmake arguments
+  * Remove unused verbosity
+  * Add bug to patch description
+
+ -- Paul Klos <kolab@klos2day.nl>  Sat, 13 Apr 2013 22:10:16 +0200
+
+libkolabxml (0.8.3-2) unstable; urgency=low
+
+  * Prepare for transition into Debian proper
+
+ -- Paul Klos <kolab@klos2day.nl>  Sat, 13 Apr 2013 00:19:04 +0200
+
+libkolabxml (0.8.3-1) unstable; urgency=low
+
+  * Imported upstream version 0.8.3
+
+ -- Paul Klos <kolab@klos2day.nl>  Fri, 01 Mar 2013 11:12:38 +0100
+
+libkolabxml (0.8.1-5) unstable; urgency=low
+
+  [ Paul Klos ]
+  * Install kolabformat.ini to usr/share/php5/kolab
+  * Have maintainer scripts manage kolabformat.ini
+
+  [ Jeroen van Meeuwen ]
+  * Rebuild
+
+ -- Paul Klos <kolab@klos2day.nl>  Fri, 19 Oct 2012 20:02:17 +0200
+
+libkolabxml (0.8.1-3.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fixing lintian errors
+
+ -- Paul Klos <kolab@klos2day.nl>  Sat, 13 Oct 2012 14:00:00 +0200
+
+libkolabxml (0.8.1-3.1) UNRELEASED; urgency=low
+
+  [ Jeroen van Meeuwen (Kolab Systems) ]
+  * Resolve hardcoded libc dependency
+  * Correct identity for maintainer
+  * Fix typo
+
+  [ Michael Kiefer <Michael-Kiefer@web.de> ]
+  * Changed dependency for phpapi to allow phpapi-20100525+lfs
+
+ -- Michael Kiefer <Michael-Kiefer@web.de>  Sat, 29 Sep 2012 21:36:35 +0200
+
+libkolabxml (0.8.1-2) unstable; urgency=low
+
+  [ Jeroen van Meeuwen (Kolab Systems) ]
+  * Make the variables used be explicitly executed in shell
+  * Attempt to include shlibs with libkolabxml0
+
+  [ Kolab Systems User ]
+
+ -- Jeroen van Meeuwen (Kolab Systems) <vanmeeuwen@kolabsys.com>  Sat, 08 Sep 2012 19:25:44 +0200
+
+libkolabxml (0.8.1-1) unstable; urgency=low
+
+  * Build for Debian Wheezy
+
+ -- Jeroen van Meeuwen <vanmeeuwen@kolabsys.com>  Fri,  7 Sep 2012 14:07:50 +0100
+
+libkolabxml (0.7.0-0ubuntu2) quantal; urgency=low
+
+  * Add libcurl4-gnutls-dev build-dep
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 19 Jul 2012 13:36:30 +0100
+
+libkolabxml (0.7.0-0ubuntu1) quantal; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 19 Jul 2012 12:33:20 +0100
+
+libkolabxml (0.6.0+repack1-0ubuntu3) quantal; urgency=low
+
+  * Enable parallel building.
+  * Switch to debhelper compat level v9 which exports build flags.
+  * Add a watch file.
+
+ -- Felix Geyer <debfx@ubuntu.com>  Tue, 17 Jul 2012 19:16:09 +0200
+
+libkolabxml (0.6.0+repack1-0ubuntu2) quantal; urgency=low
+
+  * Initial release.
+  * .orig repacked with copying licences from upstream
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 05 Jul 2012 12:55:57 +0100

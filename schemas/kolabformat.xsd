@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://kolab.org"
+    xmlns="http://kolab.org"
+    elementFormDefault="qualified">
+
+  <xs:complexType name="KolabBase">
+       <xs:attribute name="version" type="xs:string" default="3.0" />
+  </xs:complexType>
+
+  <xs:complexType name="attachmentPropType">
+    <xs:sequence> 
+      <xs:element name="parameters">
+          <xs:complexType>
+            <xs:sequence> 
+                <xs:element name="fmttype" type="xs:string" />
+                <xs:element name="x-label" type="xs:string" minOccurs="0"/>
+                <xs:element name="encoding" type="xs:string" fixed="BASE64" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+      </xs:element>
+      <xs:choice>
+        <xs:element name="uri" type="xs:string" />
+        <xs:element name="binary" type="xs:string" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="attachment" type="attachmentPropType" />  
+
+  
+  <xs:simpleType name="classifcationPropType">
+    <xs:restriction base="xs:token">
+        <xs:enumeration value="PUBLIC"/>
+        <xs:enumeration value="PRIVATE"/>
+        <xs:enumeration value="CONFIDENTIAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:element name="classification" type="classifcationPropType" />  
+
+
+  <xs:complexType name="CustomType" >
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:string"/>
+      <xs:element name="value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="x-custom" type="CustomType" />  
+
+  
+  <xs:complexType name="Note">
+    <xs:complexContent mixed="false">
+      <xs:extension base="KolabBase">
+        <xs:sequence>
+          <xs:element name="uid" type="xs:string"/>
+          <xs:element name="prodid" type="xs:string"/>
+          <xs:element name="creation-date" type="xs:dateTime"/>
+          <xs:element name="last-modification-date" type="xs:dateTime"/>
+          <xs:element name="categories" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="classification" type="classifcationPropType" minOccurs="0" />
+          <xs:element name="attachment" type="attachmentPropType"  minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="summary" type="xs:string" minOccurs="0" />
+          <xs:element name="description" type="xs:string" minOccurs="0" />
+          <xs:element name="color" type="xs:string" minOccurs="0" />
+          <xs:element name="x-custom" type="CustomType"  minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="note" type="Note"/>
+  
+  <xs:complexType name="File">
+    <xs:complexContent mixed="false">
+      <xs:extension base="KolabBase">
+        <xs:sequence>
+          <xs:element name="uid" type="xs:string"/>
+          <xs:element name="prodid" type="xs:string"/>
+          <xs:element name="creation-date" type="xs:dateTime"/>
+          <xs:element name="last-modification-date" type="xs:dateTime"/>
+          <xs:element name="categories" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="classification" type="classifcationPropType" minOccurs="0" />
+          <xs:element name="file" type="attachmentPropType" />
+          <xs:element name="note" type="xs:string" minOccurs="0" />
+          <xs:element name="x-custom" type="CustomType"  minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="file" type="File"/>
+
+
+  <xs:simpleType name="ConfigurationType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="dictionary"/>
+      <xs:enumeration value="categorycolor"/>
+      <xs:enumeration value="snippets"/>
+      <xs:enumeration value="relation"/>
+      <xs:enumeration value="file_driver"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="type" type="Configuration"/>
+
+
+  <xs:complexType name="CategoryColor" mixed="true" >
+    <xs:sequence>
+      <xs:element name="category" type="xs:string"/>
+      <xs:element name="categorycolor" type="CategoryColor" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="color" type="xs:string" />
+  </xs:complexType>
+  
+  <xs:element name="categorycolor" type="CategoryColor"/>
+
+  <xs:simpleType name="textformatType">
+    <xs:restriction base="xs:token">
+        <xs:enumeration value="PLAIN"/>
+        <xs:enumeration value="HTML"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="textformat" type="textformatType" />
+
+  <xs:complexType name="Snippet" mixed="true" >
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="text" type="xs:string"/>
+      <xs:element name="textformat" type="textformatType"/>
+      <xs:element name="shortcut" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="color" type="xs:string" />
+  </xs:complexType>
+
+  <xs:element name="snippet" type="Snippet"/>
+
+  <xs:complexType name="FileDriverSettings" mixed="true" >
+    <xs:sequence>
+      <xs:element name="host" type="xs:string" minOccurs="0"/>
+      <xs:element name="port" type="xs:integer" minOccurs="0"/>
+      <xs:element name="username" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="settings" type="FileDriverSettings"/>
+  
+  <xs:complexType name="Configuration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="KolabBase">
+        <xs:sequence>
+          <xs:element name="uid" type="xs:string"/>
+          <xs:element name="prodid" type="xs:string"/>
+          <xs:element name="creation-date" type="xs:dateTime"/>
+          <xs:element name="last-modification-date" type="xs:dateTime"/>
+          <xs:element name="type" type="ConfigurationType"/>
+          <!-- Dictionary -->
+          <xs:element name="language" type="xs:string" minOccurs="0"/>
+          <xs:element name="e" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <!-- Categorycolor -->
+          <xs:element name="categorycolor" type="CategoryColor" minOccurs="0" maxOccurs="unbounded"/>
+          <!-- Snippets -->
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+          <xs:element name="snippet" type="Snippet" minOccurs="0" maxOccurs="unbounded"/>
+          <!-- Relation -->
+          <!-- xs:element name="name" type="xs:string" minOccurs="0"/ -->
+          <xs:element name="relationType" type="xs:string" minOccurs="0"/>
+          <xs:element name="color" type="xs:string" minOccurs="0"/>
+          <xs:element name="iconName" type="xs:string" minOccurs="0"/>
+          <xs:element name="priority" type="xs:integer" minOccurs="0"/>
+          <xs:element name="parent" type="xs:string" minOccurs="0"/>
+          <xs:element name="member" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <!-- FileDriver -->
+          <xs:element name="driver" type="xs:string" minOccurs="0"/>
+          <xs:element name="title" type="xs:string" minOccurs="0"/>
+          <xs:element name="enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="settings" type="FileDriverSettings" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="configuration" type="Configuration"/>
+
+
+</xs:schema>

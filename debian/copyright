@@ -1,0 +1,223 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libkolabxml
+Upstream-Contact: Christian Mollekopf <mollekopf@kolabsys.com>
+Source: http://git.kolab.org/libkolabxml
+
+Files: *
+Copyright: 2011-2013  Christian Mollekopf <mollekopf@kolabsys.com>
+           2011-2013  Copyright (C) 2011-2012 Kolab Systems AG
+License: LGPL-3+
+
+Files: debian/*
+Copyright: 2012,      Christian Mollekopf <mollekopf@kolabsys.com>
+           2012-2013, Paul Klos <kolab@klos2day.nl>
+           2014, Diane Trout <diane@ghic.org>
+License: GPL-3+
+
+Files: src/containers/kolabfreebusy.cpp
+       tests/parsingtest.*
+       tests/validationtest.*
+       tests/kolabconversationtest.*
+Copyright: 2012-2013 Christian Mollekopf <mollekopf@kolabsys.com>
+           2014      Sandro Knauß <knauss@kolabsys.com>
+License: LGPL-2.1+
+
+Files: schemas/*
+Copyright: 2011-2012 by The Calendaring and Scheduling Consortium, Inc.
+           2010-2011 by OASIS Open
+License: Apache-2.0
+
+Files: compiled/xsdbin.cxx
+       compiled/grammar-input-stream.*
+Copyright: Boris Kolpackov <boris@codesynthesis.com>
+License: public-domain
+
+Files: src/base64.*
+Copyright: 2004-2008 René Nyffenegger
+License: custom
+
+License: LGPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems a full copy of the LGPL 3 can be found at
+ /usr/share/common-licenses/LGPL-3
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems a full copy of the GPL 3 can be found at
+ /usr/share/common-licenses/GPL-3
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems a full copy of the LGPL 2.1 can be found at
+ /usr/share/common-licenses/LGPL-2.1
+
+License: Apache-2.0
+ Files from http://www.calconnect.org/artifacts/ical-art.shtml
+ All material contained in files linked from this page is licensed
+ via the Apache License Version 2.0.
+ .
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ .
+ http://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ .
+ On Debian systems a full copy of the Apache 2 can be found at
+ /usr/share/common-licenses/Apache-2.0
+
+License: public-domain
+ The files included say that they are "not copyrighted - public domain".
+ .
+ However the upstream package that generates them lists the following
+ license. (http://codesynthesis.com/projects/xsd/)
+ .
+ 1. Intent
+ .
+ We want specified Free/Libre and Open Source Software ("FLOSS") to be
+ able to use the specified GPL-licensed XSD runtime library (libxsd) and
+ XSD generated code (collectively called the "Program") despite the fact
+ that not all FLOSS licenses are compatible with version 2 of the GNU
+ General Public License (the "GPL").
+ .
+ It is our intent to allow distribution of the entire Derivative Work
+ (including the Program) under one or more of the FLOSS licenses listed
+ in section 3 (section 2.a). It is also our intent to disallow simple
+ relicensing of the Program for the sole purpose of using it in
+ proprietary applications (section 2.b and 2.c). As an example, consider
+ two hypothetical scenarios:
+ .
+  a) You created a program that uses the XSD generated code and the XSD
+     runtime library to access information in XML instance documents.
+     Your program performs useful computations based on this information
+     (sections 2.b and 2.c are satisfied). You distribute your program,
+     including the XSD generated code and the XSD runtime library under
+     the BSD license and make it available at no charge to all third
+     parties (section 2.a is satisfied). Later you (or someone else) may
+     choose to base their proprietary application on your code since the
+     BSD license does not prohibit it.
+ .
+     This scenario falls under this FLOSS Exception.
+ .
+ .
+  b) You created a library that uses the XSD generated code and the XSD
+     runtime library to access information in XML instance documents. You
+     did not add to the library any other useful code that uses the XSD
+     generated code or the XSD runtime library (neither section 2.b nor
+     2.c is satisfied). You distribute your library, including the XSD
+     generated code and the XSD runtime library under the BSD license and
+     make it available at no charge to all third parties (section 2.a
+     is satisfied). Later you base your proprietary application on this
+     library since the BSD license does not prohibit it.
+ .
+     This scenario does not fall under this FLOSS Exception (neither
+     section 2.b nor 2.c is satisfied). You created the library for the
+     sole purpose of making the XSD generated code and the XSD runtime
+     library available to your proprietary application.
+ .
+ .
+ 2. Legal Terms and Conditions
+ .
+ As a special exception to the terms and conditions of version 2 of
+ the GPL you are free to distribute a verbatim copy of the Program
+ as part of the Derivative Work that is formed from the Program or
+ any part thereof and one or more works (each, a "FLOSS Work") as
+ long as you also meet all of these conditions:
+ .
+   a) You must cause the Derivative Work that in whole or in part
+      contains or is derived from the Program or any part thereof,
+      to be licensed as a whole at no charge to all third parties
+      under the terms of one or more of the licenses listed in
+      section 3.
+ .
+   b) The Derivative Work should contain one or more FLOSS Work that
+      can be reasonably considered as derived from the Program or some
+      part thereof.
+ .
+   c) The Derivative Work should not contain any part of the Program
+      that cannot be reasonably considered as a base of one or more
+      FLOSS Work.
+ .
+ .
+ 3. FLOSS License List
+ .
+   a) Any license listed in the "GPL-Compatible Free Software Licenses"
+      and the "GPL-Incompatible Free Software Licenses" sections of the
+      License List as published by the Free Software Foundation (FSF):
+ .
+      http://www.gnu.org/licenses/license-list.html
+ .
+ .
+ 4. Definitions
+ .
+ Terms used, but not defined, herein shall have the meaning provided in
+ the GPL.
+ .
+ Derivative Work means a derivative work under copyright law.
+ .
+ .
+ 5. Applicability
+ .
+ You may choose to redistribute a copy of the Program exclusively under
+ the terms of the GPL by removing the FLOSS Exception notice from that
+ copy of the Program.
+
+License: custom
+ This source code is provided 'as-is', without any express or implied
+ warranty. In no event will the author be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+ 1. The origin of this source code must not be misrepresented; you must not
+    claim that you wrote the original source code. If you use this source code
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ .
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original source code.
+ .
+ 3. This notice may not be removed or altered from any source distribution.

@@ -1,0 +1,39 @@
+Description: find php includepath
+ phpincludepath under debian has switched
+ from /usr/include/php/ to /usr/include/php/$(PHPAPI)
+ so we use php-config to get the correct install path.
+Author: Sandro Knauß <hefee@debian.org>
+Origin: Debian
+Last-Update: 2016-04-29
+Forwarded: not-needed
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+Index: libkolabxml/src/php/CMakeLists.txt
+===================================================================
+--- libkolabxml.orig/src/php/CMakeLists.txt	2016-04-29 13:24:54.786787527 +0200
++++ libkolabxml/src/php/CMakeLists.txt	2016-04-29 13:25:24.102918138 +0200
+@@ -26,13 +26,23 @@
+ # Try to find PHP5
+ find_path(PHP_INCLUDE_DIR NAMES main/php.h PATH_SUFFIXES php php5)
+ find_program(PHP_EXECUTABLE NAMES php)
++find_program(PHP_CONFIG_EXECUTABLE NAMES php-config)
+ 
+ # Libkolabxml needs PHP >= 5.3
+ set(PHP_MIN_VERSION 50300)
+ 
++if(NOT PHP_INCLUDE_DIR)
++  if(PHP_CONFIG_EXECUTABLE)
++    execute_process(COMMAND ${PHP_CONFIG_EXECUTABLE} --include-dir
++                    OUTPUT_VARIABLE _php_include_dir
++    )
++    string(REGEX REPLACE "\n" "" _php_include_dir "${_php_include_dir}")
++    set(PHP_INCLUDE_DIR ${_php_include_dir})
++  endif()
++endif()
++
+ # Find where to install the extension files if it's not defined
+ if(NOT DEFINED PHP_INSTALL_DIR)
+-  find_program(PHP_CONFIG_EXECUTABLE NAMES php-config)
+   if(PHP_CONFIG_EXECUTABLE)
+     execute_process(COMMAND ${PHP_CONFIG_EXECUTABLE} --extension-dir
+                     OUTPUT_VARIABLE _php_extensions_dir

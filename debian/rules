@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all buildinfo=+path
+
+%:
+	dh $@ --with python3,pkgkde_symbolshelper --buildsystem=pybuild
+
+override_dh_auto_configure:
+	@echo "blhc: ignore-line-regexp: .*/CMakeCXXCompilerABI\.cpp .*"
+	dh_auto_configure -- --configure-args \
+		"-DQT5_BUILD=ON \
+	         -DPYTHON_BINDINGS=ON \
+		 -DPYTHON_INSTALL_DIR={install_dir}"
